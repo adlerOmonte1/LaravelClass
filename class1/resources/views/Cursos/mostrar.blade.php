@@ -11,6 +11,7 @@
         <th>ciclo</th>
         <th></th>
     </tr>
+    
     @foreach($cursos as $curso)
     <tr>
         <td>{{$curso->nombre}}</td>

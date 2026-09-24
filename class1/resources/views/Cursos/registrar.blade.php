@@ -11,4 +11,13 @@
     <input class="form-control" type="text" name="ciclo" placeholder="Ingrese ciclo"/><br>
     <input class="btn" type="submit" value="Guardar"/>
 </form>
+    @if($erros->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach($errors->all() as $error)
+                    <li>{{$error}}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
 @endsection
