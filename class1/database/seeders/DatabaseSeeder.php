@@ -15,11 +15,13 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
-
+        // Usuario de prueba para iniciar sesión
         User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
+            'name'  => 'Usuario Prueba',
+            'email' => 'test@cursosapp.com',
+            // password por defecto del factory: "password"
         ]);
+
+        $this->call(CursoSeeder::class);
     }
 }
