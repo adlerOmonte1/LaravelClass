@@ -10,5 +10,6 @@ Route::get('/', function () {
 Route::get('/', fn()=>redirect()->route('cursos.index'));
 
 Route::resource('cursos', CursoController::class)
-    ->only(['index','create','store','show']);
+    ->only(['index','create','store','show'])
+    ->missing(fn () => response()->view('cursos.no-disponible', [], 404));
 
