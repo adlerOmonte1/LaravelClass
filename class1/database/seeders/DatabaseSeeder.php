@@ -21,5 +21,14 @@ class DatabaseSeeder extends Seeder
             'name' => 'Test User',
             'email' => 'test@example.com',
         ]);
+        $this->call([
+            CategoriaSeeder::class,     // padres (y sus cursos)
+            EstudianteSeeder::class,    // estudiantes y perfiles
+            MatriculaSeeder::class,     // al final, la pivote
+        ]);
     }
 }
+
+// PARA CORRERR
+// php artisan migrate:fresh --seed
+//php artisan tinker
